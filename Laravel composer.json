@@ -1,0 +1,38 @@
+{{#def.prompt('VENDOR_PACKAGE_NAME', 'Enter the vendor name for this package.')}}
+{{#def.prompt('DESCRIPTION', 'Enter a description for this package.')}}
+{{#def.prompt('NAMESPACE', 'Enter the PHP namespace of this package.')}}
+{{#def.prompt('SERVICEPROVIDER_NAME', 'Enter the name of the ServiceProvider of this package.')}}
+{
+    "name": "{{=$.VENDOR_PACKAGE_NAME}}",
+    "description": "{{=$.DESCRIPTION}}",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Venturini",
+            "email": "thomas@du.digital"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^6.0|^7.0",
+        "php": "^7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0|^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "{{=$.NAMESPACE}}\\Seeds\\": "database/seeds/",
+            "{{=$.NAMESPACE}}\\Tests\\": "tests/",
+            "{{=$.NAMESPACE}}\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "{{=$.NAMESPACE}}\\{{=$.SERVICEPROVIDER_NAME}}"
+            ],
+            "aliases": {}
+        }
+    }
+}

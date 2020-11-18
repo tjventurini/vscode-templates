@@ -76,7 +76,7 @@ class {{=$.NAME}} extends Screen
         ${{=$.MODEL}}->delete();
 
         // push alert info
-        Alert::info('You have successfully deleted the {{=$.MODEL}}.');
+        Alert::info('You have successfully deleted the {{=$.TARGET}}.');
 
         // redirect to event list
         return redirect()->route('platform.{{=$.TARGET}}s');

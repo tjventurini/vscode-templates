@@ -4,9 +4,12 @@
 namespace {{=$.NAMESPACE}};
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class {{=$.NAME}} extends Model
 {
+    use HasFactory;
+    
     /**
      * The attributes that aren't mass assignable.
      *

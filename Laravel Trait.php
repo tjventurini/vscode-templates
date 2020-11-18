@@ -10,7 +10,7 @@ trait {{=$.NAME}}
      * 
      * @return void
      */
-    public function boot{{=$.NAME}}()
+    public static function boot{{=$.NAME}}()
     {
         // do something
     }

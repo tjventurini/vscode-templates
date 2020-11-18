@@ -7,7 +7,7 @@ namespace {{=$.NAMESPACE}};
 class {{=$.NAME}}
 {
     /**
-    * {{=$.DESCRIPTION}}
+     * {{=$.DESCRIPTION}}
      * 
      * @param  null  $_
      * @param  array<string, mixed>  $args

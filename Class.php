@@ -1,4 +1,4 @@
-{{#def.prompt('NAMESPACE', 'Enter a Namespace for this Trait.')}}
+{{#def.prompt('NAMESPACE', 'Enter a Namespace for this Class.')}}
 <?php
 
 namespace {{=$.NAMESPACE}};

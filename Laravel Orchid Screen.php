@@ -1,5 +1,6 @@
 {{#def.prompt('NAMESPACE', 'Enter a Namespace for this Screen.')}}
 {{#def.prompt('MODEL', 'Enter the Model this Screen is for.')}}
+{{#def.prompt('TARGET', 'Enter the Target (singular) this Screen is for.')}}
 <?php
 
 namespace {{=$.NAMESPACE}};
@@ -17,14 +18,14 @@ class {{=$.NAME}} extends Screen
      *
      * @var string
      */
-    public $name = '{{=$.NAME}}';
+    public $name = '{{=$.MODEL}}s';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'All {{=$.NAME}}';
+    public $description = 'All {{=$.MODEL}}s';
 
     /**
      * Query data.
@@ -34,7 +35,7 @@ class {{=$.NAME}} extends Screen
     public function query(): array
     {
         return [
-            // 'events' => Event::paginate(),
+            '{{=$.TARGET}}s' => {{=$.MODEL}}::paginate(),
         ];
     }
 
@@ -46,9 +47,9 @@ class {{=$.NAME}} extends Screen
     public function commandBar(): array
     {
         return [
-            // Link::make('Create new event')
-            //     ->icon('pencil')
-            //     ->route('platform.event.edit'),
+            Link::make('Create new {{=$.TARGET}}')
+                ->icon('pencil')
+                ->route('platform.{{=$.TARGET}}.edit'),
         ];
     }
 
@@ -60,19 +61,24 @@ class {{=$.NAME}} extends Screen
     public function layout(): array
     {
         return [
-            // EventListLayout::class
+            // {{=$.MODEL}}ListLayout::class
         ];
     }
 
+    /**
+     * Delete the entry.
+     * 
+     * @param {{=$.MODEL}} ${{=$.MODEL}}
+     */
     public function delete({{=$.MODEL}} ${{=$.MODEL}})
     {
-        // delete event using the service
+        // delete the model
         ${{=$.MODEL}}->delete();
 
         // push alert info
         Alert::info('You have successfully deleted the {{=$.MODEL}}.');
 
         // redirect to event list
-        // return redirect()->route('platform.events');
+        return redirect()->route('platform.{{=$.TARGET}}s');
     }
 }

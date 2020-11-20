@@ -1,13 +1,12 @@
 {{#def.prompt('NAMESPACE', 'Enter a Namespace for this Layout.')}}
 {{#def.prompt('MODEL', 'Enter the Model this Layout is for.')}}
-{{#def.prompt('TARGET', 'Enter the Data Target this Layout is for.')}}
+{{#def.prompt('TARGET', 'Enter the Target (singular) this Layout is for.')}}
 <?php
 
 namespace {{=$.NAMESPACE}};
 
 use Orchid\Screen\TD;
 use Orchid\Screen\Actions\Link;
-use Marqant\Events\Models\Event;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\DropDown;
@@ -22,7 +21,7 @@ class {{=$.NAME}} extends Table
      *
      * @var string
      */
-    protected $target = '{{=$.TARGET}}';
+    protected $target = '{{=$.TARGET}}s';
 
     /**
      * Get the table cells to be displayed.
@@ -37,8 +36,8 @@ class {{=$.NAME}} extends Table
                 ->cantHide()
                 ->filter(TD::FILTER_TEXT)
                 ->render(function ({{=$.MODEL}} ${{=$.MODEL}}) {
-                    // return Link::make(${{=$.MODEL}}->title)
-                    //     ->route('platform.{{=$.TARGET}}.edit', ${{=$.MODEL}});
+                    return Link::make(${{=$.MODEL}}->name)
+                        ->route('platform.{{=$.TARGET}}.edit', ${{=$.MODEL}});
                 }),
                 
             TD::set(__('Actions'))

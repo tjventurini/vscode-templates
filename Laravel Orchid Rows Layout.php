@@ -1,5 +1,5 @@
 {{#def.prompt('NAMESPACE', 'Enter a Namespace for this Layout.')}}
-{{#def.prompt('TARGET', 'Enter the Data Target this Layout is for.')}}
+{{#def.prompt('TARGET', 'Enter the Target (singular) this Layout is for.')}}
 <?php
 
 namespace {{=$.NAMESPACE}};
@@ -12,8 +12,6 @@ use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\Relation;
 use Orchid\Screen\Fields\DateTimer;
-use Marqant\Events\Models\EventCategory;
-use Marqant\Events\Models\EventLocation;
 
 class {{=$.NAME}} extends Rows
 {
@@ -32,12 +30,12 @@ class {{=$.NAME}} extends Rows
     protected function fields(): array
     {
         return [
-            Input::make('{{=$.TARGET}}.title')
+            Input::make('{{=$.TARGET}}.name')
                 ->type('text')
                 ->max(255)
                 ->required()
-                ->title(__('Title'))
-                ->placeholder(__('Title')),
+                ->title(__('Name'))
+                ->placeholder(__('Name')),
             Input::make('{{=$.TARGET}}.slug')
                 ->type('text')
                 ->max(255)

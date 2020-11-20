@@ -7,9 +7,7 @@ namespace {{=$.NAMESPACE}};
 
 use Orchid\Screen\Screen;
 use Orchid\Screen\Actions\Link;
-use Marqant\Events\Models\Event;
 use Orchid\Support\Facades\Alert;
-use Marqant\Events\Facades\Events;
 
 class {{=$.NAME}} extends Screen
 {
@@ -26,6 +24,13 @@ class {{=$.NAME}} extends Screen
      * @var string
      */
     public $description = 'All {{=$.MODEL}}s';
+
+    /**
+     * Permission.
+     *
+     * @var string|array
+     */
+    public $permission = 'platform.{{=$.TARGET}}s';
 
     /**
      * Query data.

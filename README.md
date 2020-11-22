@@ -12,22 +12,14 @@ Clone the repo to a location of your choice.
 git clone git@github.com:tjventurini/vscode-template-manager-templates.git
 ```
 
-Then copy the templates into your VS Code setup.
+Then you should take a look at the `Makefile` and change paths if needed.
+
+Once this is done, you can just run the `make` command from within the repository root and the script will create a symbolic link for the `templates` folder to the `~/.config/Code\ -\ Insiders/User/globalStorage/3axap4ehko.file-templates-manager`.
 
 ```
-cp vscode-template-manager-templates/* ~/.config/Code\ -\ Insiders/User/globalStorage/3axap4ehko.file-templates-manager/
+make
+# output
+Linking the Code Insiders template folder to the templates directory
 ```
 
-Note: You will probably need to adapt the paths to match the locations on your system.
-
-## Update Repo
-
-Once you did some changes to the templates in VS Code or you add some new ones, you probably want to update the repo. To do so, just copy the files back to the repo and commit and push.
-
-```
-cp ~/.config/Code\ -\ Insiders/User/globalStorage/3axap4ehko.file-templates-manager/* vscode-template-manager-templates/
-```
-
-## Troubleshooting
-
-I did not manage to use the repo directly in the template manager I guess it's because of the `.git` folder in it 🤷
+And that's it!

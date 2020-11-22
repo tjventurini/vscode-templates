@@ -10,10 +10,10 @@ date: {{=$.PUBLISH_DATE}}
 permalink: articles/{{=SLUG}}
 image: /covers/{{=SLUG}}.png
 tags: 
-    {{~TAGS :tag:index}}
+{{~TAGS :tag:index}}
     - {{=tag}}
-    {{~}}
-publish: false
+{{~}}
+publish: true
 ---
 
 Some introduction ...

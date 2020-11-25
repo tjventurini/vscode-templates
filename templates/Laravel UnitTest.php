@@ -3,7 +3,7 @@
 
 namespace {{=$.NAMESPACE}};
 
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class {{=$.NAME}} extends TestCase
 {

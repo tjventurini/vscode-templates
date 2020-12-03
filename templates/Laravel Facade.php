@@ -1,4 +1,4 @@
-{{#def.prompt('NAMESPACE', 'Enter a Namespace for this Trait.')}}
+{{#def.prompt('NAMESPACE', 'Enter a Namespace for this Facade.')}}
 {{#def.prompt('FACADE_KEY', 'Enter a Accessor for your Facade.')}}
 <?php
 

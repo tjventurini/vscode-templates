@@ -1,5 +1,5 @@
-{{#def.prompt('NAMESPACE', 'Enter a Namespace for this Trait.')}}
-{{#def.prompt('DESCRIPTION', 'What is this Pipe supposed to do?.')}}
+{{#def.prompt('NAMESPACE', 'Enter a Namespace for this Query.')}}
+{{#def.prompt('DESCRIPTION', 'What is this Query supposed to do?.')}}
 <?php
 
 namespace {{=$.NAMESPACE}};

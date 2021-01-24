@@ -1,7 +1,7 @@
-{{#def.prompt('VENDOR_PACKAGE_NAME', 'Enter the vendor name for this package.')}}
+{{#def.prompt('VENDOR_PACKAGE_NAME', 'Enter the vendor/name for this package.')}}
+{{#def.prompt('NAMESPACE', 'Enter the PHP namespace of this package. A single backslack is enough.')}}
 {{#def.prompt('DESCRIPTION', 'Enter a description for this package.')}}
-{{#def.prompt('NAMESPACE', 'Enter the PHP namespace of this package.')}}
-{{#def.prompt('SERVICEPROVIDER_NAME', 'Enter the name of the ServiceProvider of this package.')}}
+{{ var NAMESPACE_FORMATTED = $.NAMESPACE.replace("\\","\\\\"); }}
 {
     "name": "{{=$.VENDOR_PACKAGE_NAME}}",
     "description": "{{=$.DESCRIPTION}}",
@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "illuminate/support": "^6.0|^7.0",
+        "illuminate/support": "^6.0|^7.0|^8.0",
         "php": "^7.4"
     },
     "require-dev": {
@@ -22,15 +22,15 @@
     },
     "autoload": {
         "psr-4": {
-            "{{=$.NAMESPACE}}\\Seeds\\": "database/seeds/",
-            "{{=$.NAMESPACE}}\\Tests\\": "tests/",
-            "{{=$.NAMESPACE}}\\": "src/"
+            "{{=NAMESPACE_FORMATTED}}\\Seeds\\": "database/seeds/",
+            "{{=NAMESPACE_FORMATTED}}\\Tests\\": "tests/",
+            "{{=NAMESPACE_FORMATTED}}\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "{{=$.NAMESPACE}}\\{{=$.SERVICEPROVIDER_NAME}}"
+                "{{=NAMESPACE_FORMATTED}}\\ServiceProvider"
             ],
             "aliases": {}
         }

@@ -1,4 +1,4 @@
-{{#def.prompt('NAMESPACE', 'Enter a Namespace for this Class.')}}
+{{#def.prompt('NAMESPACE', 'Enter a Namespace for this ServiceProvider.')}}
 {{#def.prompt('PACKAGE_SLUG', 'Enter a Slug for your Package.')}}
 <?php
 

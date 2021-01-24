@@ -1,4 +1,4 @@
-{{#def.prompt('NAMESPACE', 'Enter a Namespace for this seeder.')}}
+{{#def.prompt('NAMESPACE', 'Enter a Namespace for this Seeder.')}}
 <?php
 {{?$.NAMESPACE != ""}}
 namespace {{=$.NAMESPACE}};

@@ -1,5 +1,5 @@
 {{#def.prompt('NAMESPACE', 'Enter a Namespace for this Factory.')}}
-{{#def.prompt('MODEL', 'Enter the name of the Model this factory is for.')}}
+{{#def.prompt('MODEL', 'Enter the name of the Model this Factory is for.')}}
 <?php
 
 namespace {{=$.NAMESPACE}};

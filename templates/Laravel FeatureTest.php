@@ -3,8 +3,8 @@
 
 namespace {{=$.NAMESPACE}};
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class {{=$.NAME}} extends TestCase
 {

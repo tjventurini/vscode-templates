@@ -1,5 +1,5 @@
 {{#def.prompt('VENDOR_PACKAGE_NAME', 'Enter the vendor/name for this package.')}}
-{{#def.prompt('NAMESPACE', 'Enter the PHP namespace of this package. A single backslack is enough.')}}
+{{#def.prompt('NAMESPACE', 'Enter the PHP namespace of this package. A single backslash is enough.')}}
 {{#def.prompt('DESCRIPTION', 'Enter a description for this package.')}}
 {{ var NAMESPACE_FORMATTED = $.NAMESPACE.replace("\\","\\\\"); }}
 {

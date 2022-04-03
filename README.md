@@ -9,7 +9,7 @@ Note: You should fork this project!
 Clone the repo to a location of your choice.
 
 ```
-git clone git@github.com:tjventurini/vscode-template-manager-templates.git
+git clone git@github.com:tjventurini/vscode-templates.git
 ```
 
 Then you should take a look at the `Makefile` and change paths if needed.
